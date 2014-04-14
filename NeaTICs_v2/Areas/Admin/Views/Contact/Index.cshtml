@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Mensajes recibidos";
+}
+
+<h2 class="text-center">Listado de mensajes recibidos</h2>
+<div class="col-sm-8 col-sm-offset-2">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Asunto</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: Messages">
+        <tr data-bind="css: { success: !IsRead }">
+            <td data-bind="text: Id"></td>
+            <td><a data-bind="attr: { href: 'View/' + Id }, text: Name"></a></td>
+            <td><a data-bind="attr: { href: 'View/' + Id }, text: Email"></a></td>
+            <td><a data-bind="attr: { href: 'View/' + Id }, text: Subject"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+        var ContactMessageViewModel = function () {
+            var self = this;
+            self.Messages = ko.observableArray([]);
+            GetMessages();
+
+            function GetMessages() {
+                $.getJSON('@Url.HttpRouteUrl("DefaultApi", new { controller = "ContactMessage" })', function (data) {
+                    self.Messages(data);
+                });
+            };
+        };
+
+        ko.applyBindings(new ContactMessageViewModel());
+    </script>
+}

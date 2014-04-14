@@ -1,0 +1,32 @@
+﻿@if (WebSecurity.IsAuthenticated)
+{    
+    <div class="navbar-collapse navbar-adm-collapse collapse" style="height: 1px;">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href='@Url.Action("Index", "Home")'>
+                    <i class="glyphicon glyphicon-dashboard"></i>
+                </a>
+            </li>
+            <li>
+                <a id="lnkAdd" href='@Url.Action("Index", "Contact")'>
+                    <i class="glyphicon glyphicon-comment"></i>
+                </a>
+            </li>
+	        <li class="dropdown">
+		        <a id="lnkAdm" href="#" class="dropdown-toggle" data-toggle="dropdown">
+			        <i class="glyphicon glyphicon-user"></i>
+			        <b class="caret"></b>
+		        </a>
+		        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="lnkAdm">
+                    <li class="divider"></li>
+			        <li>
+                        <a href='@Url.Action("Logout", "Home")'>
+                            <i class="glyphicon glyphicon-log-out"></i>
+                            Salir
+                        </a>
+                    </li>
+		        </ul>
+	        </li>
+        </ul>
+    </div>
+}

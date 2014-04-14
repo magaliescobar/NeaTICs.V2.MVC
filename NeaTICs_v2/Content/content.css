@@ -1,0 +1,387 @@
+.content
+{
+    margin: 25px 0;
+}
+
+.wrapper
+{
+    min-height: 100%;
+	height: auto !important;
+}
+
+.contentIndex 
+{
+    margin: 20px 0;
+	color: #333366 !important;
+}
+
+.date {
+	background-color: #333366;
+	color: white;
+	float: left;
+	height: 100%;
+	text-align: center;
+	width: 5%;
+}
+
+.date h3 {
+	font-weight: bold;
+}
+
+.date p {
+	margin-top: -13px;
+}
+
+.description {
+	float: left;
+	height: 100%;
+	width: 60%;
+	overflow: hidden;
+}
+
+.description h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.description p {
+	color: #333366;
+	line-height: 3em;
+	font-size: 15px;
+	margin-left: 13px;
+	margin-top: -10px;
+}
+
+.links 
+{
+    background: #A9A9A9;
+	float: left;
+	font-weight: bold;
+	height: 100%;
+	width: 10%;
+}
+
+.links .btn 
+{
+    text-shadow: 0px 1px 2px #000;
+    border-radius: 0!important;
+	border-bottom: solid 1px #B8B8B8;
+	color: white;
+	height: 50%;
+    width: 100%;
+	text-decoration: none;
+}
+
+.links .btn:hover
+{
+    text-shadow: 0px 1px 2px #fff;
+	border-bottom: solid 1px #A9A9A9;
+	color: #333366;
+}
+
+.panel-news-events {
+	background-color: #A9A9A9;
+	height: 80px;
+  	max-height: 80px;
+  	min-height: 80px;
+}
+
+.btn-not-eve 
+{
+    font-weight: bold;
+    background: #A9A9A9;
+}
+
+.profile-social-icons {
+	background-color: white;
+	float: left;
+	height: 100%;
+	width: 25%;
+	padding: 10px;
+}
+
+.profiles {
+	height: 50%;
+	width: 100%;
+}
+
+.profiles-header
+{
+    padding-right: 0;
+    margin: 5px 0;
+}
+
+.social-icons {
+	height: 50%;
+	width: 100%;
+}
+
+.space-under-panel {
+	height: 120px;
+}
+
+.carousel-control {
+	width: 120px;
+}
+
+.carousel-indicators {
+    left: 41%;
+    bottom: 2%;
+}
+
+.carousel-indicators li{
+    border: solid 1px #A9A9A9;
+	float: left;
+}
+
+.carousel-indicators li.active {
+    background-color: #A9A9A9;
+}
+
+.custom-carousel img {
+  margin: 0 auto;
+}
+
+.facebook-icon {
+	background: url("../Images/contact-icons.png") 1px -67px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.facebook-icon:hover {
+	background: url("../Images/contact-icons.png") 201px -67px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.twitter-icon {
+	background: url("../Images/contact-icons.png") -67px -67px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.twitter-icon:hover {
+	background: url("../Images/contact-icons.png") 134px -68px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.gplus-icon {
+	background: url("../Images/contact-icons.png") -134px -67px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.gplus-icon:hover {
+	background: url("../Images/contact-icons.png") 66px -67px;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 10px;
+	width: 30px;
+}
+
+.btn-perfil{
+	background: #999;
+	border-radius: 0;
+	color: #fff;
+}
+
+.p-desarrollador{
+	background: #33cc99;
+}
+
+.p-estudiante{
+	background: #996699;
+}
+
+.p-empresa{
+	background: #f54553;
+}
+
+.p-empresa, .p-estudiante, .p-desarrollador{
+	font-weight: bold !important;
+	color: #fff !important;
+}
+
+.p-empresa a, .p-estudiante a, .p-desarrollador a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+}
+
+.dd-perfil{
+	padding: 0;
+}
+
+.dd-perfil li a{
+	color: #fff;
+	padding: 7px 20px;
+}
+
+.search {
+	bottom: 5px;
+}
+
+.drop-profile {
+	color: #333366;
+	background-color: #fff;
+	width: 190px;
+	border: 1px solid #333366;
+}
+
+.dd-perfil {
+	width: 190px;
+}
+
+.i-informatorio {
+	height: 312px;
+}
+
+.contact-icons {
+	margin: 90px 0 0 0;
+}
+
+ .email-icon, .facebook-icon, .twitter-icon, .gplus-icon {
+	margin: 10px;
+	display: block;
+	float: left;
+	background: url("../Images/contact-icons.png");
+	height: 30px;
+	width: 30px;
+}
+
+.facebook-icon {
+	background-position: -90px;
+}
+
+.facebook-icon:hover {
+	background-position: -180px;
+}
+
+.email-icon {
+	background-position: 60px;
+}
+
+.twitter-icon {
+	background-position: 60px;
+}
+
+.gplus-icon {
+	background-position: 30px;
+}
+
+.email-icon:hover {
+	background-position: -30px;
+}
+
+.twitter-icon:hover {
+	background-position: -30px;
+}
+
+.gplus-icon:hover {
+	background-position: -60px;
+}
+
+
+.info-content {
+	display: block;
+}
+
+.margin-content {
+	margin: 0 0 0 40px;
+}
+
+.nav-tabs {
+	border: 0;
+	margin: 0 0 17px 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	color: #fff;
+	font-weight: bold;
+	background-color: #333366;
+	border: 1px solid #333366;
+}
+
+.nav-tabs>li>a {
+	margin: 0;
+	border: 1px solid #333366;
+	color: #333366;
+	border-radius: 0;
+	text-decoration: none;
+}
+
+.nav-tabs>li>a:hover {
+	border: 1px solid #333366;
+}
+
+.marco-image {
+	height: auto;
+	width: 90%;
+	border: 1px solid #333366;
+	margin: 0 0 8px 0;
+}
+
+.image-desc {
+	width: 90%;
+}
+
+.margin-contact{
+    margin-top: 154px;
+}
+
+.inputs-contact 
+{
+    clear: both;
+}
+
+.message-error-contact 
+{
+    padding: 5px;
+    color: #c0392b;
+    font-weight: bold;
+    clear: both;
+    width: 100%;
+}
+
+.pnlImageCarousel 
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 350px;
+}
+
+.carousel-inner {
+    height: 450px;
+}
+
+.item-dropdown
+{
+    background: transparent!important;
+    border: 0;
+    color: #fff;
+}
+
+.item-dropdown:hover
+{
+    color: #000;
+}

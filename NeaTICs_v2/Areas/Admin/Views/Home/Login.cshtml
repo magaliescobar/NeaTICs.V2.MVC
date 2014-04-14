@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Ingresar";
+}
+
+<div class="col-sm-6 col-sm-offset-3">
+    <h2>Logueo de usuario administrador</h2>
+    <form role="form" id="loginAdm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Usuario</label>
+        <input type="text" name="Username" class="form-control username" id="exampleInputEmail1" placeholder="Ingresa tu usuario">
+      </div>
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" name="Password" class="form-control password" id="exampleInputPassword1" placeholder="Ingresa tu password">
+      </div>
+      <button type="submit" class="btn btn-default">Ingresar</button>
+    </form>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#loginAdm').validate({
+                submitHandler: function (form) {
+                    var DataAdmin = {
+                        Usuario: $('.username').val(),
+                        Password: $('.password').val()
+                    };
+
+                    $.ajax({
+                        url: '@Url.Action("Login", "Home")',
+                        type: 'POST',
+                        data: { data: JSON.stringify(DataAdmin) },
+                        dataType: 'html',
+                        success: function () {
+                            $(location).attr('href', '@Url.Action("Index")')
+                        },
+                        error: function () {
+
+                        }
+                    });
+                },
+                rules: {
+                    Username: {
+                        required: true
+                    },
+                    Password: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Username: {
+                        required: 'Ingrese su usuario por favor'
+                    },
+                    Password: {
+                        required: 'Ingrese su password por favor'
+                    }
+                }
+            });
+        });
+    </script>
+}

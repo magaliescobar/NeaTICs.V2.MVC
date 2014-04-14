@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Contacto";
+}
+
+@section DPerfil{
+    @Html.Partial("_DPerfil")
+}
+
+@Html.Hidden("UrlHomeContact", @Url.Action("Contact"))
+
+<!-- Modal -->
+<div class="modal fade" id="ModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="alert alert-success col-sm-6 col-sm-offset-3 text-center">
+    <h4>Muchas gracias por contactarte con nosotros!!!</h4>
+    <p class="text-center">Revisaremos tu mensaje y en breves nos estaremos contactando.</p>
+    </div>
+</div><!-- /.modal -->
+        
+<!-- Modal -->
+<div class="modal fade" id="ModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="alert alert-danger col-sm-6 col-sm-offset-3 text-center">
+    <h4>Hemos encontrado un error!</h4>
+    <p class="text-center">Ya existe en nuestra base de datos un usuario con los mismos datos.</p>
+    <h5>Corrobore y vuelva a intentar.</h5>
+    </div>
+</div><!-- /.modal -->
+
+<div class="col-sm-9">
+    <div id="contact-icons" class="col-sm-5">
+        <div class="polo-title">
+                <h1>Contacto</h1>
+                <h4>Completa el formulario para dejarnos tu mensaje</h4>
+            </div>
+    </div>
+    <form id="ContactForm" action="" method="post">
+        <div class="col-sm-6 margin-content">
+            <div class="inputs-form">
+                <div>
+                    <span id="cphContent_lblName">@Resources.Resources.NameContact</span>
+                    <input name="Name" type="text" id="Name" class="center-input" placeholder="Ingrese su nombre" />
+                </div>
+                <div>
+                    <span id="cphContent_lblEmail">@Resources.Resources.EmailContact</span>
+                    <input name="Email" type="text" id="Email" class="center-input" placeholder="Ingrese su e-mail" />
+                </div>
+                <div>
+                    <span id="cphContent_lblEmail">@Resources.Resources.SubjectContact</span>
+                    <input name="Subject" type="text" id="Subject" class="center-input" placeholder="Ingrese el asunto del mensaje" />
+                </div>
+                <div>
+                    <span id="cphContent_lblMessage">@Resources.Resources.MessageContact</span>
+                    <textarea name="Message" rows="6" cols="4" id="Message" class="center-textarea" placeholder="Ingrese el mensaje">
+                    </textarea>
+                </div>
+                <input type="submit" name="SendContact" value="Enviar" id="SendContact" class="submit-contact pull-right" /> <!-- CAMBIO NOMBRE(no se acepta -) -->
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var urlHomeContact = $('#UrlHomeContact').val();
+
+            $('#ContactForm').validate({
+                submitHandler: function (form) {
+                    $('.loadingImage').show('slow');
+                    var ContactMessage = {
+                        Name: $('#Name').val(),
+                        Email: $('#Email').val(),
+                        Subject: $('#Subject').val(),
+                        Message: $('#Message').val()
+                    };
+
+                    ContactMessage = JSON.stringify(ContactMessage);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: urlHomeContact,
+                        data: { data: ContactMessage },
+                        dataType: 'html',
+                        success: function (data) {
+                            $('#ContactForm')[0].reset();
+                            $('.loadingImage').hide();
+                            $('#ModalSuccess').modal({});
+                            setTimeout(function () {
+                                $('#ModalSuccess').modal('hide');
+                            }, 2000);
+                        },
+                        error: function (data) {
+                            $('#ModalError').modal({});
+                            setTimeout(function () {
+                                $('#ModalError').modal('hide');
+                            }, 2000);
+                        }
+                    });
+                },
+                rules: {
+                    Name: {
+                        required: true
+                    },
+                    Email: {
+                        required: true,
+                        email: true
+                    },
+                    Message: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Name: {
+                        required: 'El campo Nombre es requerido'
+                    },
+                    Email: {
+                        required: 'El campo E-mail es requerido',
+                        email: 'No es un formato válido de E-mail'
+                    },
+                    Message: {
+                        required: 'El campo Mensaje es requerido'
+                    }
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,42 @@
+.footer, .push
+{
+    height: 80px;
+}
+
+.footer
+{
+    clear: both;
+    padding: 15px 5px 0 0;
+    background-color: #E6E7E6;
+    height: 80px;
+}
+
+.lista
+{
+  margin-top: 13px;
+  float: left;
+  height: 84%;
+  margin-right: 16px;
+}
+
+.columna{
+  list-style-type:none;
+  padding: 0;
+}
+
+a{
+  color: #727DA2;
+  text-decoration: underline;
+  padding: 0px;
+}
+
+a:hover { 
+  font-weight: bold;
+}
+
+.siteInfo
+{
+    color: #888;
+    letter-spacing: 0.1em;
+    padding: 15px 0;
+}

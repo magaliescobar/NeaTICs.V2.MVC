@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Acerca";
+}
+
+@section Head{
+    <link rel="Stylesheet" href="@Url.Content("~/Content/informatorio-form.css")" />
+}
+
+@section DPerfil{
+    @Html.Partial("_DPerfil")
+}
+
+<div class="contentAbout">
+	<div class="col-sm-8">
+		<div class="col-sm-2 contact-icons">
+            <div style= "float:left;"> Portal NEA TICs</div> 
+		</div>
+		<div class="col-sm-9 margin-content">
+			<ul class="nav nav-tabs tabs-info-menu">
+				<li class="active">
+					<a href="#que-es" data-toggle="tab">Acerca del Portal</a>
+				</li>
+				<li>
+					<a href="#objetivos" data-toggle="tab">Qué encontrar</a>
+				</li>
+				<li>
+					<a href="#participar" data-toggle="tab">Sponsors</a>
+				</li> 
+			</ul>
+			<div class="tab-content tabs-info-content">
+				<div id="que-es" class="tab-pane fade in active">
+					<p>Uno de los principales problemas que enfrenta la industria de las tecnologías de la información y de la comunicación en la Provincia del Chaco, es la vinculación entre los actores y la circulación de la información relativa a esta industria. Frente a este problema, los alumnos del Informatorio, han dedicado su tiempo y sus conocimientos en el desarrollo de un Portal que pueda condensar toda la información disponible y necesaria para el sector en el NEA argentino.  </p>
+					<p> El portal de la industria TIC pretende ser un punto de encuentro de todas las personas que forman parte de esta industria, los que crean TICs y los que las necesitan, concentrará toda la información relativa a la industria del NEA argentino. </p>
+				</div>
+				<div id="objetivos" class="tab-pane fade">
+					<p>
+						En el portal de la Industria de las TICs, encontrarán distintos perfiles de visitantes, empresas TICs, emprendedores TICs, estudiantes TICs, y comprar TICs. El perfil de Empresas Tics, contiene información especializada para este tipo de empresas, desde legislación vigente, hasta líneas de financiamiento disponibles para las mismas. El perfil de emprendedores, cuenta con acceso a espacios de interacción de los emprendedores, información de las incubadoras de empresas zonales, y diferentes servicios para las personas que quieran convertirse en empresas TICs. El perfil de estudiantes TICs, comprende información relativa a las carreras informáticas y de comunicación, con base tecnológica, becas, y eventos. Mientras que en el perfil de comprar Tics, lo que se pretende es que las mismas empresas y emprendedores locales puedan contar con una vidriera de sus productos y habilidades, como también puedan realizar negocios a partir de esta plataforma.
+					</p>
+                    <p>También se encontrará información relevante como publicaciones descriptivas y explicativas del sector, datos de contactos, noticias referidas, y todo tipo de información relevante.</p>
+				</div>
+				<div id="participar" class="tab-pane fade">
+                    <p>Las instituciones que llevaron adelante este proyecto:</p>
+                    <div class="clear20"></div>
+                    <p class="text-center">
+                        <a href="http://www.facebook.com/informatorio" class="logo-informatorio"></a>
+                    </p>
+                    <div class="clear20"></div>
+                    <p class="text-center">
+                        <a href="http://www.facebook.com/poloitchaco" class="logo-polo"></a> 
+                    </p>
+                    <div class="clear20"></div>
+                    <p>-	Programa SSICh - Ministerio de Industria, Empleo y Trabajo</p>
+				</div> 					
+			</div>
+		</div>
+	</div>
+</div>

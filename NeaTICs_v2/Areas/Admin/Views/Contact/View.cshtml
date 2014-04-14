@@ -1,0 +1,29 @@
+﻿@model NeaTICs_v2.Models.ContactMessage
+
+@{
+    ViewBag.Title = "Mensaje";
+}
+
+<h2 class="text-center">Mensaje de: @Html.DisplayTextFor(x => x.Name)</h2>
+<div class="col-sm-4 col-sm-offset-4 text-center">
+    <div class="form-group">
+        <label><h4>Fecha de envío</h4></label>
+        <br />
+        @Html.DisplayTextFor(x => x.Date)
+    </div>
+    <div class="form-group">
+        <label><h4>Email</h4></label>
+        <br />
+        @Html.DisplayTextFor(x => x.Email)
+    </div>
+    <div class="form-group">
+        <label><h4>Asunto</h4></label>
+        <br />
+        @Html.DisplayTextFor(x => x.Subject)
+    </div>
+    <div class="form-group">
+        <label><h4>Mensaje</h4></label>
+        <br />
+        @Html.DisplayTextFor(x => x.Message)
+    </div>
+</div>

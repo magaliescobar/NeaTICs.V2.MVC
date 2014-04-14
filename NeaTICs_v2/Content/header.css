@@ -1,0 +1,111 @@
+.mg-language{
+	margin: 24px 0 5px 0;
+}
+
+.header
+{
+    padding: 10px 0;
+}
+
+.activeMenu
+{
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-lang{
+	border-color: #333366;
+	border-radius: 0;
+	padding: 6px;
+}
+
+.ddlLanguage
+{
+    text-align: left;
+    text-decoration: none;
+}
+
+.menu-ppal > li{
+	float: left;
+	padding: 0;
+	margin: 0 16px 0 0;
+	border-bottom: 1px solid;
+}
+
+.menu-ppal > li > a{
+	padding: 0;
+	text-decoration: none;
+}
+
+.menu-ppal > li > a:hover{
+	background: transparent;
+}
+
+.menu-ppal > li:hover{
+	background: #fff;
+	font-weight: bold;
+	border-bottom: 2px solid;
+}
+
+.none-radiusborder{
+	border-radius: 0;
+}
+
+.back-icon-search{
+	background: #333366;
+}
+
+.border-search{
+	border: 1px solid #333366;
+}
+
+#social-header .email-icon, #social-header .facebook-icon, #social-header .twitter-icon, #social-header .gplus-icon {
+	margin: 10px;
+	display: block;
+	float: left;
+	background: url("../img/contact-icons.png");
+	height: 30px;
+	width: 30px;
+}
+
+#social-header .facebook-icon {
+	background-position: -90px;
+}
+
+#social-header .facebook-icon:hover {
+	background-position: -180px;
+}
+
+#social-header .email-icon {
+	background-position: 60px;
+}
+
+#social-header .twitter-icon {
+	background-position: 60px;
+}
+
+#social-header .gplus-icon {
+	background-position: 30px;
+}
+
+#social-header .email-icon:hover {
+	background-position: -30px;
+}
+
+#social-header .twitter-icon:hover {
+	background-position: -30px;
+}
+
+#social-header .gplus-icon:hover {
+	background-position: -60px;
+}
+
+.btn-default 
+{
+    height: 34px;   
+}
+
+.logo
+{
+    padding-left: 0;
+}

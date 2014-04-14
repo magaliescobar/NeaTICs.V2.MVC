@@ -1,0 +1,108 @@
+﻿@helper activeMenu(string item)
+{
+    if (item == @HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString())
+    {
+        @:class="activeMenu"
+    }
+}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>@ViewBag.Title - NEA TICs</title>
+        <meta charset="utf-8" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+	    @System.Web.Optimization.Styles.Render("~/Content/bootstrap")       
+        @System.Web.Optimization.Styles.Render("~/Content/css")
+        @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
+        @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+        @RenderSection("Head", required: false)
+    </head>
+    <body>
+        <img src='@Url.Content("~/Images/ajax-loader.gif")' alt="loading" style="display:none" class="loadingImage" />
+        @Html.Hidden("UrlIndexHome", @Url.Action("Index", "Home"))
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 header">
+                    <div class="col-sm-2 col-sm-offset-10 text-right">
+						<div class="btn-group sLenguage">
+                            @Html.Hidden("UrlSetCulture", @Url.Action("SetCulture", "Home"))
+                            <button type="button" class="btn btn-default btn-lang dropdown-toggle pull-right" data-toggle="dropdown">
+                                @Html.Hidden("CurrentCulture", @ViewContext.RouteData.Values["culture"])
+                                <span id="currentCulture"></span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+							</button>
+                            <ul class="dropdown-menu ddlLanguage" role="menu">
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-9 logo">
+							<h1 class="text-logo">NEA TICs</h1>
+						</div>
+                        @RenderSection("DPerfil", required: false)
+					</div>
+					<div class="col-sm-12">
+						<div id="nav-ppal">
+							<ul class="nav navbar-nav menu-ppal">
+                                <li @activeMenu("Index")>
+                                    <a href="@Url.Action("Index", "Home")">Inicio</a>
+                                </li>
+                                <li @activeMenu("About")>
+                                    <a href="@Url.Action("About", "Home")">Acerca</a>
+                                </li> 
+                                <li @activeMenu("PoloITChaco")>
+                                    <a href="@Url.Action("PoloITChaco", "Home")">Polo IT Chaco</a>
+                                </li>
+                                <li @activeMenu("Informatorio")>
+                                    <a href="@Url.Action("Informatorio", "Home")">Informatorio</a>
+                                </li>
+                                <li @activeMenu("Contact")>
+                                    <a href="@Url.Action("Contact", "Home")">Contacto</a>
+                                </li>
+                            </ul>
+						</div>
+						<div id="search" class="input-group col-sm-3 search-ppal">
+							<div class="input-group-btn">
+								<button id="btnSearch" class="btn btn-default none-radiusborder border-search" type="button">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</div>
+                            <input type="text" class="form-control none-radiusborder border-search" placeholder="¿Qué buscas?">
+						</div>
+					</div>
+				</div>
+                <div class="col-sm-12 wrapper">
+                    @RenderBody()
+                    <div class="push"></div>
+                </div>
+                <div class="col-sm-12 footer">
+                        <div class="col-sm-6">
+					        <ul class="nav navbar-nav footer-menu">
+                                <li class="active">
+                                    <a href="">Inicio</a>
+                                </li>
+						        <li>
+                                    <a href="">Acerca</a>
+						        </li>	
+						        <li>
+							        <a href="">Polot IT Chaco</a>
+						        </li> 		
+						        <li> 
+							        <a href="">Informatorio</a>
+						        </li>		
+						        <li>
+                                    <a href="">Contacto</a>
+						        </li>	
+					        </ul>
+                        </div>
+                        <div class="col-sm-6 text-right siteInfo">
+                            Diseño: "Los #22" - Desarrollo: "Los Implementadores" ©Informatorio 2013
+                        </div>
+                    </div>
+            </div>
+        </div>
+        @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
